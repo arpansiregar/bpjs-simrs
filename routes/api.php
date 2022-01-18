@@ -21,4 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('rest', [BPJSController::class, 'rest']);
+Route::post('statusantrean', [BPJSController::class, 'statusantrean']);
+Route::post('ambilantrean', [BPJSController::class, 'ambilantrean']);
+Route::post('sisaantrean', [BPJSController::class, 'sisaantrean']);
+Route::post('batalantrean', [BPJSController::class, 'batalantrean']);
+Route::post('checkin', [BPJSController::class, 'checkin']);
+Route::post('infoPasienBaru', [BPJSController::class, 'infoPasienBaru']);
 Route::post('jadwaloperasi', [BPJSController::class, 'jadwaloperasi']);
+Route::post('jadwaloperasipasien', [BPJSController::class, 'jadwaloperasipasien']);
