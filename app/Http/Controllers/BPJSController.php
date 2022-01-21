@@ -62,9 +62,10 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->post($this->baseUrl . 'sisaantrean', [
+        ])->asForm()->post('http://103.94.5.214:83/wswaled/api/sisaantrean', [
             'kodebooking' => $request->kodebooking,
         ]);
+
         $response = $response->json();
         return $response;
     }
