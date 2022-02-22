@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Http;
 class BPJSController extends Controller
 {
 
-    // public $baseUrl = 'http://192.168.2.45/wswaled/api/';
-    public $baseUrl = 'http://103.94.5.214:83/wswaled/api/';
+    public $baseUrl = 'http://192.168.2.45/wswaled/api/';
+    // public $baseUrl = 'http://103.94.5.214:83/wswaled/api/';
 
     public function rest(Request $request)
     {
@@ -62,7 +62,7 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post('http://103.94.5.214:83/wswaled/api/sisaantrean', [
+        ])->asForm()->post($this->baseUrl . 'sisaantrean', [
             'kodebooking' => $request->kodebooking,
         ]);
 
@@ -75,7 +75,7 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'statusantrean', [
+        ])->asForm()->post($this->baseUrl . 'batalantrean', [
             'kodebooking' => $request->kodebooking,
             'keterangan' => $request->keterangan,
         ]);
@@ -88,10 +88,11 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'statusantrean', [
+        ])->asForm()->post($this->baseUrl . 'checkin', [
             'kodebooking' => $request->kodebooking,
             'waktu' => $request->waktu,
         ]);
+        // dd($request->all());
         $response = $response->json();
         return $response;
     }
@@ -101,7 +102,7 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'statusantrean', [
+        ])->asForm()->post($this->baseUrl . 'infoPasienBaru', [
             'nomorkartu' => $request->nomorkartu,
             'nik' => $request->nik,
             'nomorkk' => $request->nomorkk,
