@@ -44,7 +44,7 @@ class BPJSController extends Controller
         ])->asForm()->post($this->baseUrl . 'ambilantrean', [
             'nomorkartu' => $request->nomorkartu,
             'nik' => $request->nik,
-            'nohp' => $request->tanggalperiksa,
+            'nohp' => $request->nohp,
             'kodepoli' => $request->kodepoli,
             'norm' => $request->norm,
             'tanggalperiksa' => $request->tanggalperiksa,
