@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('rest', [BPJSController::class, 'rest']);
+Route::get('token', [BPJSController::class, 'token']);
 Route::post('statusantrean', [BPJSController::class, 'statusantrean']);
 Route::post('ambilantrean', [BPJSController::class, 'ambilantrean']);
 Route::post('sisaantrean', [BPJSController::class, 'sisaantrean']);
