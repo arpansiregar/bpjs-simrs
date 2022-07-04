@@ -9,14 +9,15 @@ class BPJSController extends Controller
 {
 
     // public $baseUrl = 'http://192.168.2.45/wswaled/api/';
-    public $baseUrl = 'http://103.94.5.214:83/wswaled/api/';
+    // public $baseUrl = 'http://103.94.5.214:83/wswaled/api/';
+    public $baseUrl = ' http://103.94.5.210/antrian/api/';
 
     public function rest(Request $request)
     {
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-password' => $request->header('x-password')
-        ])->get($this->baseUrl . 'Rest');
+        ])->get($this->baseUrl . 'token');
         $response = json_decode($response, true);
         return $response;
     }
@@ -26,7 +27,7 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'statusantrean', [
+        ])->asForm()->post($this->baseUrl . 'wsrs/status_antrian', [
             'kodepoli' => $request->kodepoli,
             'kodedokter' => $request->kodedokter,
             'tanggalperiksa' => $request->tanggalperiksa,
