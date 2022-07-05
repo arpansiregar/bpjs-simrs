@@ -43,7 +43,7 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'ambilantrean', [
+        ])->asForm()->post($this->baseUrl . 'wsrs/ambil_antrian', [
             'nomorkartu' => $request->nomorkartu,
             'nik' => $request->nik,
             'nohp' => $request->nohp,
@@ -64,7 +64,7 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'sisaantrean', [
+        ])->asForm()->post($this->baseUrl . 'wsrs/sisa_antrian', [
             'kodebooking' => $request->kodebooking,
         ]);
 
@@ -77,7 +77,7 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'batalantrean', [
+        ])->asForm()->post($this->baseUrl . 'wsrs/batal_antrian', [
             'kodebooking' => $request->kodebooking,
             'keterangan' => $request->keterangan,
         ]);
@@ -90,7 +90,7 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'checkin', [
+        ])->asForm()->post($this->baseUrl . 'wsrs/checkin_antrian', [
             'kodebooking' => $request->kodebooking,
             'waktu' => $request->waktu,
         ]);
@@ -104,7 +104,7 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'infoPasienBaru', [
+        ])->asForm()->post($this->baseUrl . 'wsrs/info_pasien_baru', [
             'nomorkartu' => $request->nomorkartu,
             'nik' => $request->nik,
             'nomorkk' => $request->nomorkk,
@@ -133,7 +133,7 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'jadwaloperasi', [
+        ])->asForm()->post($this->baseUrl . 'wsrs/jadwal_operasi_rs', [
             'tanggalawal' => $request->tanggalawal,
             'tanggalakhir' => $request->tanggalakhir,
         ]);
@@ -147,7 +147,7 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'jadwaloperasipasien', [
+        ])->asForm()->post($this->baseUrl . 'wsrs/jadwal_operasi_pasien', [
             'nopeserta' => $request->nopeserta,
         ]);
         $response = $response->json();
