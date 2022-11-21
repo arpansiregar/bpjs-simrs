@@ -11,7 +11,7 @@ class BPJSController extends Controller
 
     // public $baseUrl = 'http://192.168.2.45/wswaled/api/';
     // public $baseUrl = 'http://103.94.5.214:83/wswaled/api/';
-    public $baseUrl = "http://103.94.5.210/antrian/api/";
+    public $baseUrl = "http://103.94.5.210/simrs/api/";
 
     public function token(Request $request)
     {
