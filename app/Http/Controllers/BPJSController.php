@@ -159,7 +159,7 @@ class BPJSController extends Controller
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
         ])->asForm()->post($this->baseUrl . 'wsrs/ambil_antrean_farmasi', [
-            'nopeserta' => $request->nopeserta,
+            'kodebooking' => $request->kodebooking,
         ]);
         $response = $response->json();
         return $response;
@@ -170,7 +170,7 @@ class BPJSController extends Controller
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
         ])->asForm()->post($this->baseUrl . 'wsrs/status_antrean_farmasi', [
-            'nopeserta' => $request->nopeserta,
+            'kodebooking' => $request->kodebooking,
         ]);
         $response = $response->json();
         return $response;
