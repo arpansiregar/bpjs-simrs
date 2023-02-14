@@ -31,3 +31,5 @@ Route::post('batalantrean', [BPJSController::class, 'batalantrean']);
 Route::post('infopasienbaru', [BPJSController::class, 'infoPasienBaru']);
 Route::post('jadwaloperasi', [BPJSController::class, 'jadwaloperasi']);
 Route::post('jadwaloperasipasien', [BPJSController::class, 'jadwaloperasipasien']);
+Route::post('ambilantreanfarmasi', [BPJSController::class, 'ambilantreanfarmasi']);
+Route::post('statusantreanfarmasi', [BPJSController::class, 'statusantreanfarmasi']);

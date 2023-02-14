@@ -153,4 +153,26 @@ class BPJSController extends Controller
         $response = $response->json();
         return $response;
     }
+    public function ambilantreanfarmasi(Request $request)
+    {
+        $response = Http::withHeaders([
+            'x-username' => $request->header('x-username'),
+            'x-token' => $request->header('x-token')
+        ])->asForm()->post($this->baseUrl . 'wsrs/ambil_antrean_farmasi', [
+            'nopeserta' => $request->nopeserta,
+        ]);
+        $response = $response->json();
+        return $response;
+    }
+    public function statusantreanfarmasi(Request $request)
+    {
+        $response = Http::withHeaders([
+            'x-username' => $request->header('x-username'),
+            'x-token' => $request->header('x-token')
+        ])->asForm()->post($this->baseUrl . 'wsrs/status_antrean_farmasi', [
+            'nopeserta' => $request->nopeserta,
+        ]);
+        $response = $response->json();
+        return $response;
+    }
 }
