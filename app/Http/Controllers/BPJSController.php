@@ -18,9 +18,8 @@ class BPJSController extends Controller
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-password' => $request->header('x-password')
-        ])->get($this->baseUrl . 'token');
-        $response = json_decode($response, true);
-        return $response;
+        ])->get($this->baseUrl . 'antrian/token');
+        return json_decode($response);
     }
 
     public function statusantrean(Request $request)
@@ -34,8 +33,7 @@ class BPJSController extends Controller
             'tanggalperiksa' => $request->tanggalperiksa,
             'jampraktek' => $request->jampraktek,
         ]);
-        $response = $response->json();
-        return $response;
+        return json_decode($response);
     }
 
     public function ambilantrean(Request $request)
@@ -55,8 +53,7 @@ class BPJSController extends Controller
             'jeniskunjungan' => $request->jeniskunjungan,
             'nomorreferensi' => $request->nomorreferensi,
         ]);
-        $response = $response->json();
-        return $response;
+        return json_decode($response);
     }
 
     public function sisaantrean(Request $request)
@@ -67,9 +64,7 @@ class BPJSController extends Controller
         ])->asForm()->post($this->baseUrl . 'antrian/sisa_antrian', [
             'kodebooking' => $request->kodebooking,
         ]);
-
-        $response = $response->json();
-        return $response;
+        return json_decode($response);
     }
 
     public function batalantrean(Request $request)
@@ -81,8 +76,7 @@ class BPJSController extends Controller
             'kodebooking' => $request->kodebooking,
             'keterangan' => $request->keterangan,
         ]);
-        $response = $response->json();
-        return $response;
+        return json_decode($response);
     }
 
     public function checkin(Request $request)
@@ -94,12 +88,10 @@ class BPJSController extends Controller
             'kodebooking' => $request->kodebooking,
             'waktu' => $request->waktu,
         ]);
-        // dd($request->all());
-        $response = $response->json();
-        return $response;
+        return json_decode($response);
     }
 
-    public function infoPasienBaru(Request $request)
+    public function infopasienbaru(Request $request)
     {
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
@@ -124,8 +116,7 @@ class BPJSController extends Controller
             'rw' => $request->rw,
             'rt' => $request->rt,
         ]);
-        $response = $response->json();
-        return $response;
+        return json_decode($response);
     }
 
     public function jadwaloperasi(Request $request)
@@ -137,9 +128,7 @@ class BPJSController extends Controller
             'tanggalawal' => $request->tanggalawal,
             'tanggalakhir' => $request->tanggalakhir,
         ]);
-
-        $response = $response->json();
-        return $response;
+        return json_decode($response);
     }
 
     public function jadwaloperasipasien(Request $request)
@@ -150,29 +139,26 @@ class BPJSController extends Controller
         ])->asForm()->post($this->baseUrl . 'antrian/jadwal_operasi_pasien', [
             'nopeserta' => $request->nopeserta,
         ]);
-        $response = $response->json();
-        return $response;
+        return json_decode($response);
     }
     public function ambilantreanfarmasi(Request $request)
     {
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'antrian/ambil_antrean_farmasi', [
+        ])->asForm()->post($this->baseUrl . 'antrian/ambil_antrian_farmasi', [
             'kodebooking' => $request->kodebooking,
         ]);
-        $response = $response->json();
-        return $response;
+        return json_decode($response);
     }
     public function statusantreanfarmasi(Request $request)
     {
         $response = Http::withHeaders([
             'x-username' => $request->header('x-username'),
             'x-token' => $request->header('x-token')
-        ])->asForm()->post($this->baseUrl . 'antrian/status_antrean_farmasi', [
+        ])->asForm()->post($this->baseUrl . 'antrian/status_antrian_farmasi', [
             'kodebooking' => $request->kodebooking,
         ]);
-        $response = $response->json();
-        return $response;
+        return json_decode($response);
     }
 }

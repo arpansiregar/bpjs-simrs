@@ -19,16 +19,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
-
 Route::get('token', [BPJSController::class, 'token']);
 Route::post('statusantrean', [BPJSController::class, 'statusantrean']);
 Route::post('ambilantrean', [BPJSController::class, 'ambilantrean']);
 Route::post('sisaantrean', [BPJSController::class, 'sisaantrean']);
 Route::post('checkin', [BPJSController::class, 'checkin']);
 Route::post('batalantrean', [BPJSController::class, 'batalantrean']);
-Route::post('infopasienbaru', [BPJSController::class, 'infoPasienBaru']);
+Route::post('infopasienbaru', [BPJSController::class, 'infopasienbaru']);
 Route::post('jadwaloperasi', [BPJSController::class, 'jadwaloperasi']);
 Route::post('jadwaloperasipasien', [BPJSController::class, 'jadwaloperasipasien']);
 Route::post('ambilantreanfarmasi', [BPJSController::class, 'ambilantreanfarmasi']);
